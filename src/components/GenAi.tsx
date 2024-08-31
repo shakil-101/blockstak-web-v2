@@ -12,11 +12,15 @@ const GenAi = () => {
           <div className="absolute 2xl:bottom-[15%] lg:bottom-[20%] md:bottom-[10%] sm:bottom-[20%] bottom-[25%] w-full z-20 px-4">
             {/* Increased z-index for text and button */}
             <h1 className="mb-8 max-w-[800px] mx-auto md:text-[64px] sm:text-[50px] xs:text-[40px] text-[35px] font-medium sm:leading-[72px] xs:leading-[55px] leading-[45px] text-center ">
-              Building Cool Tech with Generative AI. Learn More
+              Building the Next Big Thing with Generative AI
             </h1>
             <p className="max-w-[800px] mx-auto text-[#CACAD0] sm:text-2xl text-xl text-center sm:leading-[32px] leading-[28px]">
-              simply dummy text of the printing and typesetting industry. Simply
-              dummy text of the printing and typesetting industry.
+              We're on a mission to create the next groundbreaking innovation
+              with generative AI at its core. By leveraging the most advanced
+              technologies, we're developing solutions that will redefine
+              industries and set new standards for what's possible. Join us as
+              we shape the future with creativity, intelligence, and limitless
+              potential.
             </p>
             <div className="w-[155px] mx-auto mt-16">
               <PrimaryButton btnText={"Get In Touch"} />

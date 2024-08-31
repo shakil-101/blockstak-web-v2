@@ -11,11 +11,14 @@ const Banner = () => {
     >
       <div className="container">
         <h1 className="mb-8 lg:text-[100px] md:text-[70px] sm:text-[55px] text-[35px] font-bold text-center md:leading-[100px] sm:leading-[65px]">
-          Building in Stealth <br /> Empower to disrupt
+          Building in stealth.
+          <br />
+          Empowered to disrupt.
         </h1>
         <p className="max-w-[900px] mx-auto text-[#CACAD0]  text-center md:text-[28px] text-[20px] sm:leading-[36px] leading-[30px]">
-          simply dummy text of the printing and typesetting industry. simply
-          dummy text of the printing and typesetting. 
+          Empowered by cutting-edge
+          technology and bold ideas, we're not just preparing for the
+          future—we're designing it.
         </p>
 
         <div className="w-[155px] mx-auto mt-16">

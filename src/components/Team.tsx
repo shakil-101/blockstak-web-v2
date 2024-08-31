@@ -20,7 +20,10 @@ const Team = () => {
             Our Core Team
           </h1>
           <p className="max-w-[800px] mx-auto text-[#CACAD0] sm:text-2xl text-xl text-center sm:leading-[32px] leading-[28px]">
-            simply dummy text of the printing and.
+            A dynamic group of innovators, each bringing a
+            wealth of expertise and passion to the table. With diverse
+            backgrounds in technology, design, and strategy, they are the
+            driving force behind our mission to create groundbreaking solutions.
           </p>
         </div>
 

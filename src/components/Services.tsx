@@ -27,13 +27,16 @@ const Services = () => {
               </div>
             </div>
             <h3 className="text-white text-xl font-semibold mb-6">
-              Product Development
+              Fueling Innovation: MVPs for Silicon Valley Startups
             </h3>
             <p className="text-gray-400 pb-10">
-              simply dummy text of the printing and typesetting industry. simply
-              dummy text of the printing and typesetting industry. simply dummy
-              text of the printing and typesetting industry. simply dummy text
-              of the printing and typesetting industry. 
+              We specialize in turning visionary ideas into reality. By
+              partnering with early-stage Silicon Valley startups, we build
+              Minimum Viable Products (MVPs) that get your innovation to market
+              faster. Whether you're refining your concept or preparing for your
+              next funding round, our expert team delivers scalable, high-impact
+              solutions that drive your success from day one. Let's create the
+              future together.
             </p>
             <div className="absolute w-full left-0 -bottom-5">
               <button className="mx-auto bg-[#1C1939] px-6 py-2 rounded-full btn-box-shadow border-2 border-[#A197FF33]">
@@ -58,16 +61,22 @@ const Services = () => {
                 />
               </div>
             </div>
-            <h3 className="text-white text-xl font-semibold mb-6">AI/ML</h3>
+            <h3 className="text-white text-xl font-semibold mb-6">
+              Pioneering AI/ML Solutions with a Focus on Generative AI
+            </h3>
             <p className="text-gray-400  pb-10">
-              simply dummy text of the printing and typesetting industry. simply
-              dummy text of the printing and typesetting industry. simply dummy
-              text of the printing and typesetting industry. simply dummy text
-              of the printing and typesetting industry. 
+              We are at the forefront of AI and machine learning innovation,
+              creating products and solutions that harness the power of
+              generative AI. Our mission is to push the boundaries of what's
+              possible, delivering cutting-edge technologies that transform
+              industries and empower businesses. From concept to deployment, we
+              specialize in crafting intelligent systems that not only solve
+              problems but redefine what's achievable in the world of AI. Join
+              us as we build the future of intelligent technology.
             </p>
             <div className="absolute w-full left-0 -bottom-5">
               <button className="mx-auto bg-[#1C1939] px-6 py-2 rounded-full btn-box-shadow border-2 border-[#A197FF33]">
-                Product Development
+                AI/ML
               </button>
             </div>
           </div>
@@ -89,17 +98,22 @@ const Services = () => {
               </div>
             </div>
             <h3 className="text-white text-xl font-semibold mb-6">
-              Blockchain
+              Exploring the Potential of Blockchain: Real-World Solutions in
+              Progress
             </h3>
             <p className="text-gray-400 pb-10">
-              simply dummy text of the printing and typesetting industry. simply
-              dummy text of the printing and typesetting industry. simply dummy
-              text of the printing and typesetting industry. simply dummy text
-              of the printing and typesetting industry. 
+              We're passionate about the transformative power of blockchain
+              technology. Our team is dedicated to exploring its vast potential,
+              investing our time and resources into research and innovation.
+              We're committed to discovering practical, real-life applications
+              that can revolutionize industries and drive meaningful change. As
+              we delve into the possibilities, we're laying the groundwork for
+              the future of decentralized solutions. Stay tuned as we turn
+              visionary ideas into reality.
             </p>
             <div className="absolute w-full left-0 -bottom-5">
               <button className="mx-auto bg-[#1C1939] px-6 py-2 rounded-full btn-box-shadow border-2 border-[#A197FF33]">
-                Product Development
+                Blockchain
               </button>
             </div>
           </div>

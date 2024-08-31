@@ -1,0 +1,58 @@
+.bubbleButton button {
+  color: black;
+  font-size: 18px;
+  border: 1px solid white;
+  border-radius: 10px;
+  width: 125px;
+  height: 40px;
+
+  font-weight: medium;
+  font-family: sans-serif;
+  /* letter-spacing: 1px; */
+  text-align: center;
+  line-height: 2.3em;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: 0.5s;
+  /* margin: 1em; */
+  background-color: white;
+}
+
+.bubbleButton button span {
+  position: absolute;
+  width: 25%;
+  height: 75%;
+  background-color: #6f61ee;
+  transform: translateY(150%);
+  border-radius: 50%;
+  left: calc((var(--n) - 1) * 25%);
+  transition: 0.5s;
+  transition-delay: calc((var(--n) - 1) * 0.1s);
+  z-index: -1;
+}
+
+.bubbleButton button:hover {
+  color: white;
+  border: 1px solid #6f61ee;
+}
+
+.bubbleButton button:hover span {
+  transform: translateY(0) scale(2);
+}
+
+.bubbleButton button span:nth-child(1) {
+  --n: 1;
+}
+
+.bubbleButton button span:nth-child(2) {
+  --n: 2;
+}
+
+.bubbleButton button span:nth-child(3) {
+  --n: 3;
+}
+
+.bubbleButton button span:nth-child(4) {
+  --n: 4;
+}

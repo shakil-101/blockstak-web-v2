@@ -1,0 +1,31 @@
+<svg width="1440" height="734" viewBox="0 0 1440 734" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_50_74)">
+<g filter="url(#filter0_f_50_74)">
+<path d="M1273 429C1273 349.7 1214.84 273.648 1111.32 217.575C1007.8 161.502 867.4 130 721 130C574.601 130 434.197 161.502 330.677 217.575C227.157 273.648 169 349.7 169 429L721 429H1273Z" fill="#3E3498" fill-opacity="0.4"/>
+</g>
+<path opacity="0.5" d="M295 186L296.08 188.92L299 190L296.08 191.08L295 194L293.92 191.08L291 190L293.92 188.92L295 186Z" fill="white"/>
+<path d="M352 134L353.08 136.92L356 138L353.08 139.08L352 142L350.92 139.08L348 138L350.92 136.92L352 134Z" fill="white" fill-opacity="0.2"/>
+<path d="M424 186L425.08 188.92L428 190L425.08 191.08L424 194L422.92 191.08L420 190L422.92 188.92L424 186Z" fill="white"/>
+<path opacity="0.5" d="M462 126L463.08 128.92L466 130L463.08 131.08L462 134L460.92 131.08L458 130L460.92 128.92L462 126Z" fill="white"/>
+<path d="M525 146L526.08 148.92L529 150L526.08 151.08L525 154L523.92 151.08L521 150L523.92 148.92L525 146Z" fill="white" fill-opacity="0.2"/>
+<path opacity="0.5" d="M619 119L620.08 121.92L623 123L620.08 124.08L619 127L617.92 124.08L615 123L617.92 121.92L619 119Z" fill="white"/>
+<path d="M664 150L665.08 152.92L668 154L665.08 155.08L664 158L662.92 155.08L660 154L662.92 152.92L664 150Z" fill="white" fill-opacity="0.2"/>
+<path opacity="0.5" d="M745 134L746.08 136.92L749 138L746.08 139.08L745 142L743.92 139.08L741 138L743.92 136.92L745 134Z" fill="white"/>
+<path d="M817 162L818.08 164.92L821 166L818.08 167.08L817 170L815.92 167.08L813 166L815.92 164.92L817 162Z" fill="white" fill-opacity="0.2"/>
+<path opacity="0.5" d="M923 138L924.08 140.92L927 142L924.08 143.08L923 146L921.92 143.08L919 142L921.92 140.92L923 138Z" fill="white"/>
+<path d="M996 186L998.161 191.839L1004 194L998.161 196.161L996 202L993.839 196.161L988 194L993.839 191.839L996 186Z" fill="white"/>
+<path d="M1091 174L1093.16 179.839L1099 182L1093.16 184.161L1091 190L1088.84 184.161L1083 182L1088.84 179.839L1091 174Z" fill="white" fill-opacity="0.2"/>
+<path d="M1565 603.5C1565 487.203 1476.03 375.668 1317.65 293.434C1159.28 211.199 944.475 165 720.5 165C496.525 165 281.723 211.199 123.348 293.434C-35.0261 375.668 -124 487.203 -124 603.5L720.5 603.5H1565Z" fill="#0A0A16"/>
+
+</g>
+<defs>
+<filter id="filter0_f_50_74" x="-45" y="-84" width="1532" height="727" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="107" result="effect1_foregroundBlur_50_74"/>
+</filter>
+<clipPath id="clip0_50_74">
+<rect width="1440" height="734" fill="white"/>
+</clipPath>
+</defs>
+</svg>

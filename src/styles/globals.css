@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --base-bg: #0a0a16;
+  --border-gradient-start: #524b92;
+  --border-gradient-end: #8b7ff8;
+}
+
+body {
+  background-color: var(--base-bg);
+}
+/* .banner {
+  background: url("/public/banner.svg");
+  background-size: cover;
+  background-position: center;
+} */
+
+.btn-box-shadow {
+  box-shadow: 0px 2px 0px 0px #ffffff29 inset;
+  -webkit-box-shadow: 0px 2px 11px 0px #ffffff29 inset;
+  -moz-box-shadow: 0px 2px 11px 0px #ffffff29 inset;
+}
+.ellipse-shadow-inner {
+  box-shadow: inset -10px 10px 50px -10px #0a0a16;
+}
+
+.footer-wrapper {
+  /* background-image: url("/polygon-shade2.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden; */
+}
+
+.service-card {
+  background-image: url("/grid-layers.png");
+  background-size: contain;
+  background-position: top;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+/* ====== hamburger icon ======== */
+
+.line {
+  fill: none;
+  stroke: white;
+  stroke-width: 6;
+  transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+    stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.line1 {
+  stroke-dasharray: 60 207;
+  stroke-width: 6;
+}
+.line2 {
+  stroke-dasharray: 60 60;
+  stroke-width: 6;
+}
+.line3 {
+  stroke-dasharray: 60 207;
+  stroke-width: 6;
+}
+.opened .line1 {
+  stroke-dasharray: 90 207;
+  stroke-dashoffset: -134;
+  stroke-width: 6;
+}
+.opened .line2 {
+  stroke-dasharray: 1 60;
+  stroke-dashoffset: -30;
+  stroke-width: 6;
+}
+.opened .line3 {
+  stroke-dasharray: 90 207;
+  stroke-dashoffset: -134;
+  stroke-width: 6;
+}
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

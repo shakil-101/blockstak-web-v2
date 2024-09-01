@@ -80,14 +80,14 @@ const Team = () => {
                   <p className="text-[#CACAD0] leading-[22px] text-center mt-4">
                     ML Developer
                   </p>
-                  <Image
-                    src="/circle-shade.svg"
-                    alt="Team member"
-                    width={500}
-                    height={500}
-                    className="absolute -bottom-20 -right-20  z-0 scale-150"
-                  />
                 </div>
+                <Image
+                  src="/circle-shade.svg"
+                  alt="Team member"
+                  width={500}
+                  height={500}
+                  className="absolute -bottom-20 -right-20  z-0 scale-125"
+                />
               </div>
             </div>
             <div className="sm:col-span-1 col-span-2">
@@ -107,14 +107,14 @@ const Team = () => {
                   <p className="text-[#CACAD0] leading-[22px] text-center mt-4">
                     Software Engineer
                   </p>
-                  <Image
-                    src="/circle-shade.svg"
-                    alt="Team member"
-                    width={500}
-                    height={500}
-                    className="absolute -top-20 -left-20  z-0 scale-150"
-                  />
                 </div>
+                <Image
+                  src="/circle-shade.svg"
+                  alt="Team member"
+                  width={500}
+                  height={500}
+                  className="absolute -top-20 -left-20  z-0 scale-125"
+                />
               </div>
             </div>
           </div>
@@ -162,15 +162,14 @@ const Team = () => {
                 <p className="text-[#CACAD0] leading-[22px] text-center mt-4">
                   Frontend Developer
                 </p>
-
-                <Image
-                  src="/circle-shade.svg"
-                  alt="Team member"
-                  width={500}
-                  height={500}
-                  className="absolute -bottom-20 -left-20 scale-150 z-0"
-                />
               </div>
+              <Image
+                src="/circle-shade.svg"
+                alt="Team member"
+                width={500}
+                height={500}
+                className="absolute -bottom-20 -left-20 scale-125 z-0"
+              />
             </div>
           </div>
 

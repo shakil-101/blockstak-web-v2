@@ -79,6 +79,7 @@ body {
   stroke-dashoffset: -134;
   stroke-width: 6;
 }
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

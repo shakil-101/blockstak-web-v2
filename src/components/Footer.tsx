@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import PrimaryButton from "./PrimaryButton";
 
 const Footer = () => {
@@ -16,6 +16,30 @@ const Footer = () => {
     message: "",
   });
 
+  const containerRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      if (containerRef.current) {
+        containerRef.current.querySelectorAll(".object").forEach((move) => {
+          const moving_value = move.getAttribute("data-value");
+          const x = (e.clientX * Number(moving_value)) / 150;
+          const y = (e.clientY * Number(moving_value)) / 150;
+
+          (
+            move as HTMLElement
+          ).style.transform = `translateX(${x}px) translateY(${y}px)`;
+        });
+      }
+    };
+
+    document.addEventListener("mousemove", handleMouseMove);
+
+    return () => {
+      document.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, []);
+
   const submitForm = async (e: any) => {
     e.preventDefault();
 
@@ -23,13 +47,17 @@ const Footer = () => {
   };
 
   return (
-    <div className="pt-28 bg-[#070710] relative overflow-hidden footer-wrapper">
+    <div
+      ref={containerRef}
+      className="pt-28 bg-[#070710] relative overflow-hidden footer-wrapper"
+    >
       <Image
         src="/polygon-shade2.png"
         width={1200}
         height={700}
         alt="Team members"
-        className="absolute top-40 left-0 right-0 mx-auto z-0 sm:scale-100 scale-150"
+        data-value="10"
+        className="object absolute top-40 left-0 right-0 mx-auto z-0 sm:scale-100 scale-150"
       />
       <div className="container relative z-10">
         <div className="mb-20">

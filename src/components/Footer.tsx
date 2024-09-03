@@ -19,24 +19,37 @@ const Footer = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
+    let animationFrameId: number;
+
     const handleMouseMove = (e: MouseEvent) => {
       if (containerRef.current) {
-        containerRef.current.querySelectorAll(".object").forEach((move) => {
-          const moving_value = move.getAttribute("data-value");
-          const x = (e.clientX * Number(moving_value)) / 150;
-          const y = (e.clientY * Number(moving_value)) / 150;
+        containerRef.current
+          .querySelectorAll<HTMLElement>(".object")
+          .forEach((move) => {
+            const moving_value = move.getAttribute("data-value");
+            const x = (e.clientX * Number(moving_value)) / 150;
+            const y = (e.clientY * Number(moving_value)) / 150;
 
-          (
-            move as HTMLElement
-          ).style.transform = `translateX(${x}px) translateY(${y}px)`;
-        });
+            move.style.transition = "transform 0.1s ease-out"; // Smooth transition
+            move.style.transform = `translateX(${x}px) translateY(${y}px)`;
+          });
       }
     };
 
-    document.addEventListener("mousemove", handleMouseMove);
+    const throttledMouseMove = (e: MouseEvent) => {
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+      }
+      animationFrameId = requestAnimationFrame(() => handleMouseMove(e));
+    };
+
+    document.addEventListener("mousemove", throttledMouseMove);
 
     return () => {
-      document.removeEventListener("mousemove", handleMouseMove);
+      document.removeEventListener("mousemove", throttledMouseMove);
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+      }
     };
   }, []);
 
@@ -62,10 +75,11 @@ const Footer = () => {
       <div className="container relative z-10">
         <div className="mb-20">
           <h1 className="mb-8 max-w-[800px] mx-auto md:text-[64px] sm:text-[50px] xs:text-[40px] text-[35px] font-medium sm:leading-[72px] xs:leading-[55px] leading-[45px] text-center ">
-            People love us more for our work & values
+            Connect with Us
           </h1>
           <p className="max-w-[800px] mx-auto text-[#CACAD0] sm:text-2xl text-xl text-center sm:leading-[32px] leading-[28px]">
-            simply dummy text of the printing and.
+            Reach out to our team and let's start a conversation. Your next
+            great idea could be just a message away.
           </p>
         </div>
 
@@ -128,7 +142,7 @@ const Footer = () => {
         <div className="grid grid-cols-12 sm:gap-8 gap-16 py-36">
           <div className="lg:col-span-3 sm:col-span-6 col-span-12  order-1">
             <h1 className="max-w-[264px] text-[44px] leading-[57px]">
-              We Build Product for future
+              We build to disrupt.
             </h1>
           </div>
 

@@ -1,29 +1,78 @@
 import React from "react";
+import { motion, useInView } from "framer-motion";
 import PrimaryButton from "./PrimaryButton";
 
 const GenAi = () => {
+  // Define the animation variants
+  const variants = {
+    hidden: { opacity: 0, y: 100 }, // Start below and invisible
+    visible: { opacity: 1, y: 0 }, // End at the normal position
+  };
+
+  const ref = React.useRef(null);
+  const isInView = useInView(ref, { once: true });
+
   return (
-    <div className="bg-[#0a0a16]">
-      <div className="relative min-h-[700px]">
-        <div
-          className="z-10 bg-cover bg-top bg-no-repeat lg:h-[800px] md:h-[600px] h-[300px] ellipse-shadow-inner"
-          style={{ backgroundImage: "url('ellipse-star.svg')" }}
+    <div className="ellipse-shadow-inner min-h-[850px] h-fit overflow-hidden">
+      <div
+        ref={ref}
+        className="max-w-[1600px] mx-auto relative ellipse-shadow-inner"
+      >
+        <motion.div
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          variants={variants}
+          transition={{ duration: 0.8, delay: 0.6 }}
         >
-          <div className="absolute 2xl:bottom-[15%] lg:bottom-[20%] md:bottom-[10%] sm:bottom-[20%] bottom-[25%] w-full z-20 px-4">
-            {/* Increased z-index for text and button */}
-            <h1 className="mb-8 max-w-[800px] mx-auto md:text-[64px] sm:text-[50px] xs:text-[40px] text-[35px] font-medium sm:leading-[72px] xs:leading-[55px] leading-[45px] text-center ">
-              Building Cool Tech with Generative AI. Learn More
-            </h1>
-            <p className="max-w-[800px] mx-auto text-[#CACAD0] sm:text-2xl text-xl text-center sm:leading-[32px] leading-[28px]">
-              simply dummy text of the printing and typesetting industry. Simply
-              dummy text of the printing and typesetting industry.
-            </p>
-            <div className="w-[155px] mx-auto mt-16">
-              <PrimaryButton btnText={"Get In Touch"} />
-            </div>
-          </div>
+          <div
+            className="absolute w-full md:h-[700px] h-[450px] top-0 left-0 right-0 mx-auto bg-cover bg-center bg-no-repeat z-10 ellipse-shadow-inner"
+            style={{
+              backgroundImage: "url('earth-shade.png')",
+            }}
+          ></div>
+        </motion.div>
+
+        <div
+          className="absolute top-[200px] w-full lg:min-h-[500px] min-h-[350px] bg-cover bg-center bg-no-repeat z-10"
+          style={{
+            backgroundImage: "url('earth-solid.png')",
+          }}
+        ></div>
+
+        <div className="absolute top-[300px] w-full z-20 px-4">
+          <motion.h1
+            className="mb-8 max-w-[800px] mx-auto md:text-[64px] sm:text-[50px] xs:text-[40px] text-[35px] font-medium sm:leading-[72px] xs:leading-[55px] leading-[45px] text-center"
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            variants={variants}
+            transition={{ duration: 0.8, delay: 0.9 }}
+          >
+            Building the Next Big Thing with Generative AI
+          </motion.h1>
+          <motion.p
+            className="max-w-[800px] mx-auto text-[#CACAD0] sm:text-2xl text-xl text-center sm:leading-[32px] leading-[28px]"
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            variants={variants}
+            transition={{ duration: 0.8, delay: 1.1 }}
+          >
+            We're on a mission to create the next groundbreaking innovation with
+            generative AI at its core. By leveraging the most advanced
+            technologies, we're developing solutions that will redefine
+            industries and set new standards for what's possible. Join us as we
+            shape the future with creativity, intelligence, and limitless
+            potential.
+          </motion.p>
+          <motion.div
+            className="w-[155px] mx-auto mt-16"
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            variants={variants}
+            transition={{ duration: 1, delay: 1.3 }}
+          >
+            <PrimaryButton btnText={"Get In Touch"} />
+          </motion.div>
         </div>
-        <div className="backup-div absolute bottom-0 left-0 bg-[#0a0a16] h-36 z-0 w-full"></div>
       </div>
     </div>
   );

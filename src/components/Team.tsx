@@ -1,18 +1,77 @@
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { motion, useInView } from "framer-motion";
 
 const Team = () => {
+  const ref = React.useRef(null);
+  const isInView = useInView(ref, { once: true });
+
+  const [scale, setScale] = useState(0);
+  const [members, setMembers] = useState({
+    ghalib: {
+      image: "/ghalib.png",
+      name: "Ghalib Hussaiyn",
+      designation: "Founder & CEO",
+    },
+    raghib: {
+      image: "/raghib.jpg",
+      name: "Raghib Noor",
+      designation: "ML Developer",
+    },
+    asif: {
+      image: "/asif.jpg",
+      name: "Asif Hossain Khan",
+      designation: "Software Engineer",
+    },
+    nayeem: {
+      image: "/nayeem.jpg",
+      name: "Nayeem Islam",
+      designation: " Backend Developer",
+    },
+    shakil: {
+      image: "/shakil.jpg",
+      name: "Md Shakil Chowdhury",
+      designation: "Frontend Developer",
+    },
+    fahim: {
+      image: "/fahim.jpg",
+      name: "Fahim Murshed",
+      designation: "Technology Consultant",
+    },
+  });
+
+  const handleScroll = () => {
+    const scrollPosition = window.scrollY;
+    let newScale = 1 + scrollPosition / 1000;
+
+    setScale(newScale);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <div className="relative overflow-hidden">
       <div className="container">
-        <div>
-          <Image
-            src="/ai-motion.png"
-            width={280}
-            height={280}
-            alt="Ai motion"
-            className="mx-auto "
-          />
+        <div ref={ref}>
+          <motion.div
+            initial={{ scale: 0.3, opacity: 0 }}
+            animate={isInView ? { scale: 1, opacity: 1 } : {}}
+            transition={{ duration: 1, ease: "easeOut" }}
+          >
+            <Image
+              src="/ai-motion.png"
+              width={280}
+              height={280}
+              alt="Ai motion"
+              className="mx-auto"
+            />
+          </motion.div>
         </div>
 
         <div className="mt-40 mb-20">
@@ -20,17 +79,29 @@ const Team = () => {
             Our Core Team
           </h1>
           <p className="max-w-[800px] mx-auto text-[#CACAD0] sm:text-2xl text-xl text-center sm:leading-[32px] leading-[28px]">
-            simply dummy text of the printing and.
+            A dynamic group of innovators, each bringing a wealth of expertise
+            and passion to the table. With diverse backgrounds in technology,
+            design, and strategy, they are the driving force behind our mission
+            to create groundbreaking solutions.
           </p>
         </div>
 
         <div className="">
-          <Image
+          {/* <Image
             src="/polygon-shade2.png"
             width={1200}
             height={1000}
             alt="Team members"
             className="absolute sm:top-[10%] top-[15%] z-[-1] left-0 right-0 mx-auto md:scale-100 scale-150 "
+            style={{ transform: `scale(${scale})` }}
+          /> */}
+          <Image
+            src="/polygon-shade2.png"
+            width={500}
+            height={400}
+            alt="Team members"
+            className="absolute top-[30%] z-[-1] left-0 right-0 mx-auto transition-transform duration-500 ease-out"
+            style={{ transform: `scale(${scale})` }}
           />
         </div>
 
@@ -42,7 +113,7 @@ const Team = () => {
               style={{ backgroundImage: "url('horizontal-bg.svg')" }}
             >
               <Image
-                src="/ghalib.png"
+                src={`${members.ghalib.image}`}
                 width={100}
                 height={100}
                 alt="Team member"
@@ -50,10 +121,10 @@ const Team = () => {
               />
 
               <h1 className="text-2xl font-medium leading-[32px] mt-10">
-                Ghalib Hussaiyn
+                {members.ghalib.name}
               </h1>
               <p className="text-[#CACAD0] leading-[22px] mt-4">
-                Founder & CEO
+                {members.ghalib.designation}
               </p>
               <Image
                 src="/circle-shade.svg"
@@ -67,7 +138,7 @@ const Team = () => {
               <div className="col-span-2 relative overflow-hidden border border-[#2B2B5A] bg-[#0E0E1F] sm:px-10 px-6 sm:py-20 py-10 rounded-lg">
                 <div className="relative z-10">
                   <Image
-                    src="/raghib.jpg"
+                    src={`${members.raghib.image}`}
                     width={100}
                     height={100}
                     alt="Team member"
@@ -75,10 +146,10 @@ const Team = () => {
                   />
 
                   <h1 className="text-2xl font-medium leading-[32px] text-center mt-10">
-                    Raghib Noor
+                    {members.raghib.name}
                   </h1>
                   <p className="text-[#CACAD0] leading-[22px] text-center mt-4">
-                    ML Developer
+                    {members.raghib.designation}
                   </p>
                 </div>
                 <Image
@@ -94,7 +165,7 @@ const Team = () => {
               <div className="col-span-2 relative overflow-hidden border border-[#2B2B5A] bg-[#0E0E1F] sm:px-10 px-6 sm:py-20 py-10 rounded-lg">
                 <div className="relative z-10">
                   <Image
-                    src="/asif.jpg"
+                    src={`${members.asif.image}`}
                     width={100}
                     height={100}
                     alt="Team member"
@@ -102,10 +173,10 @@ const Team = () => {
                   />
 
                   <h1 className="text-2xl font-medium leading-[32px] text-center mt-10">
-                    Asif Hossain Khan
+                    {members.asif.name}
                   </h1>
                   <p className="text-[#CACAD0] leading-[22px] text-center mt-4">
-                    Software Engineer
+                    {members.asif.designation}
                   </p>
                 </div>
                 <Image
@@ -124,17 +195,17 @@ const Team = () => {
             <div className="col-span-2 relative overflow-hidden border border-[#2B2B5A] bg-[#0E0E1F] sm:px-10 px-6 sm:py-20 py-10 rounded-lg">
               <div className="relative z-10">
                 <Image
-                  src="/nayeem.jpg"
+                  src={`${members.nayeem.image}`}
                   width={100}
                   height={100}
                   alt="Team member"
                   className="mx-auto rounded-full border-2 border-[#2B2B5A]"
                 />
                 <h1 className="text-2xl font-medium leading-[32px] text-center mt-10">
-                  Nayeem
+                  {members.nayeem.name}
                 </h1>
                 <p className="text-[#CACAD0] leading-[22px] text-center mt-4">
-                  Backend Developer
+                  {members.nayeem.designation}
                 </p>
               </div>
               <Image
@@ -149,7 +220,7 @@ const Team = () => {
             <div className="col-span-2 relative overflow-hidden border border-[#2B2B5A] bg-[#0E0E1F] sm:px-10 px-6 sm:py-20 py-10 rounded-lg">
               <div className="relative z-10">
                 <Image
-                  src="/shakil.jpg"
+                  src={`${members.shakil.image}`}
                   width={100}
                   height={100}
                   alt="Team member"
@@ -157,10 +228,10 @@ const Team = () => {
                 />
 
                 <h1 className="text-2xl font-medium leading-[32px] text-center mt-10">
-                  Md Shakil Chowdhury
+                  {members.shakil.name}
                 </h1>
                 <p className="text-[#CACAD0] leading-[22px] text-center mt-4">
-                  Frontend Developer
+                  {members.shakil.designation}
                 </p>
               </div>
               <Image
@@ -181,7 +252,7 @@ const Team = () => {
             <div className="h-full flex  flex-col justify-between">
               <div>
                 <Image
-                  src="/fahim.jpg"
+                  src={`${members.fahim.image}`}
                   width={100}
                   height={100}
                   alt="Team member"
@@ -191,10 +262,10 @@ const Team = () => {
 
               <div>
                 <h1 className="text-2xl font-medium leading-[32px] text-center mt-10">
-                  Fahim Murshed
+                  {members.fahim.name}
                 </h1>
                 <p className="text-[#CACAD0] leading-[22px] text-center mt-4">
-                  Technology Consultant
+                  {members.fahim.designation}
                 </p>
               </div>
             </div>

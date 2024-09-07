@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import PrimaryButton from "./PrimaryButton";
 
 const Footer = () => {
@@ -16,6 +16,43 @@ const Footer = () => {
     message: "",
   });
 
+  const containerRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    let animationFrameId: number;
+
+    const handleMouseMove = (e: MouseEvent) => {
+      if (containerRef.current) {
+        containerRef.current
+          .querySelectorAll<HTMLElement>(".object")
+          .forEach((move) => {
+            const moving_value = move.getAttribute("data-value");
+            const x = (e.clientX * Number(moving_value)) / 150;
+            const y = (e.clientY * Number(moving_value)) / 150;
+
+            move.style.transition = "transform 0.1s ease-out"; // Smooth transition
+            move.style.transform = `translateX(${x}px) translateY(${y}px)`;
+          });
+      }
+    };
+
+    const throttledMouseMove = (e: MouseEvent) => {
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+      }
+      animationFrameId = requestAnimationFrame(() => handleMouseMove(e));
+    };
+
+    document.addEventListener("mousemove", throttledMouseMove);
+
+    return () => {
+      document.removeEventListener("mousemove", throttledMouseMove);
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+      }
+    };
+  }, []);
+
   const submitForm = async (e: any) => {
     e.preventDefault();
 
@@ -23,13 +60,17 @@ const Footer = () => {
   };
 
   return (
-    <div className="pt-28 bg-[#070710] relative overflow-hidden footer-wrapper">
+    <div
+      ref={containerRef}
+      className="pt-28 bg-[#070710] relative overflow-hidden footer-wrapper"
+    >
       <Image
         src="/polygon-shade2.png"
         width={1200}
         height={700}
         alt="Team members"
-        className="absolute top-40 left-0 right-0 mx-auto z-0 sm:scale-100 scale-150"
+        data-value="10"
+        className="object absolute top-40 left-0 right-0 mx-auto z-0 sm:scale-100 scale-150"
       />
       <div className="container relative z-10">
         <div className="mb-20">
@@ -37,9 +78,8 @@ const Footer = () => {
             Connect with Us
           </h1>
           <p className="max-w-[800px] mx-auto text-[#CACAD0] sm:text-2xl text-xl text-center sm:leading-[32px] leading-[28px]">
-            Reach out to our team and let's start a
-            conversation. Your next great idea
-            could be just a message away.
+            Reach out to our team and let's start a conversation. Your next
+            great idea could be just a message away.
           </p>
         </div>
 

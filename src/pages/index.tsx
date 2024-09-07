@@ -8,6 +8,7 @@ import Team from "@/components/Team";
 import Testimonial from "@/components/Testimonial";
 import Footer from "@/components/Footer";
 import { NextSeo } from "next-seo";
+import ParallaxComponent from "@/components/ParallaxComponent";
 
 const inter = Inter({ subsets: ["latin"] });
 const ds_sans = DM_Sans({ subsets: ["latin"] });
@@ -17,13 +18,15 @@ export default function Home() {
   const meta = {
     title: "Blockstak | Home",
     description:
-      "Empowered by cutting-edge technology and bold ideas, we're not just preparing for the future—we're designing it.", 
+      "Empowered by cutting-edge technology and bold ideas, we're not just preparing for the future—we're designing it.",
     image: "/banner.svg",
     url: "https://blockstak.com",
   };
 
   return (
-    <main className={`text-white min-h-screen   ${ds_sans.className}`}>
+    <main
+      className={`text-white min-h-screen overflow-hidden  ${ds_sans.className}`}
+    >
       <NextSeo
         title={meta.title}
         description={meta.description}
@@ -42,6 +45,7 @@ export default function Home() {
           site_name: "Blockstak",
         }}
       />
+      {/* <ParallaxComponent /> */}
       <Navbar />
       <Banner />
       <Services />

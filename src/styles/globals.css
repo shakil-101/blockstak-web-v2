@@ -36,11 +36,24 @@ body {
 }
 
 .service-card {
+  border-radius: 10px;
   background-image: url("/grid-layers.png");
   background-size: contain;
   background-position: top;
   background-repeat: no-repeat;
-  position: relative;
+  /* position: relative; */
+  transform-style: preserve-3d;
+
+  .service-card-inner {
+    transform: translateZ(60px);
+  }
+}
+.wrapper-3d {
+  transform-style: preserve-3d;
+
+  .inner-3d {
+    transform: translateZ(60px);
+  }
 }
 
 /* ====== hamburger icon ======== */
@@ -79,6 +92,36 @@ body {
   stroke-dashoffset: -134;
   stroke-width: 6;
 }
+
+/* ========== fade in  */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  opacity: 0;
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+.delay-1 {
+  animation-delay: 0.5s;
+}
+
+.delay-2 {
+  animation-delay: 1s;
+}
+
+.delay-3 {
+  animation-delay: 1.5s;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

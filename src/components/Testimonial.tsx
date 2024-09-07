@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React, { useState } from "react";
+import Tilt from "react-parallax-tilt"; // Import the Tilt component
 
 const Testimonial = () => {
   const [statements, setStatements] = useState([
@@ -25,6 +26,7 @@ const Testimonial = () => {
       image: "/ghalib.png",
     },
   ]);
+
   return (
     <div className="py-28">
       <div className="container">
@@ -38,34 +40,44 @@ const Testimonial = () => {
         </div>
         <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 justify-center gap-10">
           {statements.map((item, index) => (
-            <div
+            <Tilt
               key={index}
-              className="relative p-[1px] bg-gradient-to-b from-[#2B2B5A]  to-[#0A0A16] rounded-lg shadow-lg"
+              className="rounded-lg overflow-hidden"
+              tiltMaxAngleX={15}
+              tiltMaxAngleY={15}
+              perspective={1000}
+              scale={1.05}
+              transitionSpeed={1500}
+              glareEnable={true}
+              glareMaxOpacity={0.5}
+              glareColor="#8B7FF8"
+              glarePosition="bottom"
             >
-              <div className="bg-gradient-to-b from-[#17142C]  to-[#0A0A16] rounded-lg p-8">
-                <div className="flex items-center space-x-4">
-                  <div>
-                    <Image
-                      src={item.image}
-                      width={65}
-                      height={65}
-                      alt={`${item.name}`}
-                      className="rounded-full"
-                    />
+              <div className="inner-element relative p-[1px] bg-gradient-to-b from-[#2B2B5A]  to-[#0A0A16] rounded-lg shadow-lg overflow-hidden">
+                <div className="bg-gradient-to-b from-[#17142C]  to-[#0A0A16] rounded-lg p-8">
+                  <div className="flex items-center space-x-4">
+                    <div>
+                      <Image
+                        src={item.image}
+                        width={65}
+                        height={65}
+                        alt={`${item.name}`}
+                        className="rounded-full"
+                      />
+                    </div>
+                    <div>
+                      <h1 className="text-2xl font-medium leading-[32px]">
+                        {item.name}
+                      </h1>
+                      <p className="text-[#CACAD0] leading-[22px] mt-1">
+                        {item.designation}
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h1 className="text-2xl font-medium leading-[32px]">
-                      {item.name}
-                    </h1>
-                    <p className="text-[#CACAD0] leading-[22px] mt-1">
-                      {item.designation}
-                    </p>
-                  </div>
+                  <p className="text-[#CACAD0] mt-5">{item.message}</p>
                 </div>
-
-                <p className="text-[#CACAD0] mt-5">{item.message}</p>
               </div>
-            </div>
+            </Tilt>
           ))}
         </div>
       </div>

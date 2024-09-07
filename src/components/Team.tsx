@@ -1,6 +1,11 @@
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { motion, useInView } from "framer-motion";
+import TeamMemberHorizontal from "./TeamMemberHorizontal";
+import TeamMemberVertical from "./TeamMemberVertical";
+import TeamMemberSquare from "./TeamMemberSquare";
+
+import Tilt from "react-parallax-tilt";
 
 const Team = () => {
   const ref = React.useRef(null);
@@ -56,7 +61,7 @@ const Team = () => {
   }, []);
 
   return (
-    <div className="relative overflow-hidden">
+    <div className="relative ">
       <div className="container">
         <div ref={ref}>
           <motion.div
@@ -108,168 +113,46 @@ const Team = () => {
         <div className="grid grid-cols-12 sm:gap-10 gap-6">
           {/* ======= Ghalib & Raghib & Asif */}
           <div className="lg:col-span-6 col-span-12 grid grid-cols-2 sm:gap-10 gap-6">
-            <div
-              className="col-span-2 relative overflow-hidden border border-[#2B2B5A] px-10 sm:py-20 py-10 rounded-lg bg-cover bg-center bg-no-repeat"
-              style={{ backgroundImage: "url('horizontal-bg.svg')" }}
-            >
-              <Image
-                src={`${members.ghalib.image}`}
-                width={100}
-                height={100}
-                alt="Team member"
-                className="rounded-full"
-              />
+            <TeamMemberHorizontal memberInfo={members.ghalib} />
 
-              <h1 className="text-2xl font-medium leading-[32px] mt-10">
-                {members.ghalib.name}
-              </h1>
-              <p className="text-[#CACAD0] leading-[22px] mt-4">
-                {members.ghalib.designation}
-              </p>
-              <Image
-                src="/circle-shade.svg"
-                width={300}
-                height={250}
-                alt="Team member"
-                className="absolute top-0 right-0"
+            <div className="sm:col-span-1 col-span-2">
+              <TeamMemberSquare
+                memberInfo={{
+                  ...members.raghib,
+                  shadePosition: "-bottom-20 -right-20",
+                }}
               />
             </div>
-            <div className="sm:col-span-1 col-span-2">
-              <div className="col-span-2 relative overflow-hidden border border-[#2B2B5A] bg-[#0E0E1F] sm:px-10 px-6 sm:py-20 py-10 rounded-lg">
-                <div className="relative z-10">
-                  <Image
-                    src={`${members.raghib.image}`}
-                    width={100}
-                    height={100}
-                    alt="Team member"
-                    className="mx-auto rounded-full border-2 border-[#2B2B5A]"
-                  />
 
-                  <h1 className="text-2xl font-medium leading-[32px] text-center mt-10">
-                    {members.raghib.name}
-                  </h1>
-                  <p className="text-[#CACAD0] leading-[22px] text-center mt-4">
-                    {members.raghib.designation}
-                  </p>
-                </div>
-                <Image
-                  src="/circle-shade.svg"
-                  alt="Team member"
-                  width={500}
-                  height={500}
-                  className="absolute -bottom-20 -right-20  z-0 scale-125"
-                />
-              </div>
-            </div>
             <div className="sm:col-span-1 col-span-2">
-              <div className="col-span-2 relative overflow-hidden border border-[#2B2B5A] bg-[#0E0E1F] sm:px-10 px-6 sm:py-20 py-10 rounded-lg">
-                <div className="relative z-10">
-                  <Image
-                    src={`${members.asif.image}`}
-                    width={100}
-                    height={100}
-                    alt="Team member"
-                    className="mx-auto rounded-full border-2 border-[#2B2B5A]"
-                  />
-
-                  <h1 className="text-2xl font-medium leading-[32px] text-center mt-10">
-                    {members.asif.name}
-                  </h1>
-                  <p className="text-[#CACAD0] leading-[22px] text-center mt-4">
-                    {members.asif.designation}
-                  </p>
-                </div>
-                <Image
-                  src="/circle-shade.svg"
-                  alt="Team member"
-                  width={500}
-                  height={500}
-                  className="absolute -top-20 -left-20  z-0 scale-125"
-                />
-              </div>
+              <TeamMemberSquare
+                memberInfo={{
+                  ...members.asif,
+                  shadePosition: "-top-20 -left-20",
+                }}
+              />
             </div>
           </div>
 
           {/* ====== Nayeem & Shakil */}
           <div className="lg:col-span-3 sm:col-span-6 col-span-12 grid grid-cols-1 sm:gap-10 gap-6">
-            <div className="col-span-2 relative overflow-hidden border border-[#2B2B5A] bg-[#0E0E1F] sm:px-10 px-6 sm:py-20 py-10 rounded-lg">
-              <div className="relative z-10">
-                <Image
-                  src={`${members.nayeem.image}`}
-                  width={100}
-                  height={100}
-                  alt="Team member"
-                  className="mx-auto rounded-full border-2 border-[#2B2B5A]"
-                />
-                <h1 className="text-2xl font-medium leading-[32px] text-center mt-10">
-                  {members.nayeem.name}
-                </h1>
-                <p className="text-[#CACAD0] leading-[22px] text-center mt-4">
-                  {members.nayeem.designation}
-                </p>
-              </div>
-              <Image
-                src="/circle-shade.svg"
-                alt="Circle Shade"
-                width={500}
-                height={500}
-                className="absolute top-0 left-0 scale-150 z-0"
-              />
-            </div>
+            <TeamMemberSquare
+              memberInfo={{
+                ...members.nayeem,
+                shadePosition: "top-0 left-0",
+              }}
+            />
 
-            <div className="col-span-2 relative overflow-hidden border border-[#2B2B5A] bg-[#0E0E1F] sm:px-10 px-6 sm:py-20 py-10 rounded-lg">
-              <div className="relative z-10">
-                <Image
-                  src={`${members.shakil.image}`}
-                  width={100}
-                  height={100}
-                  alt="Team member"
-                  className="mx-auto rounded-full border-2 border-[#2B2B5A]"
-                />
-
-                <h1 className="text-2xl font-medium leading-[32px] text-center mt-10">
-                  {members.shakil.name}
-                </h1>
-                <p className="text-[#CACAD0] leading-[22px] text-center mt-4">
-                  {members.shakil.designation}
-                </p>
-              </div>
-              <Image
-                src="/circle-shade.svg"
-                alt="Team member"
-                width={500}
-                height={500}
-                className="absolute -bottom-20 -left-20 scale-125 z-0"
-              />
-            </div>
+            <TeamMemberSquare
+              memberInfo={{
+                ...members.shakil,
+                shadePosition: "-bottom-20 -left-20",
+              }}
+            />
           </div>
 
           {/* ====== Fahim */}
-          <div
-            className="lg:col-span-3 sm:col-span-6 col-span-12 relative overflow-hidden border border-[#2B2B5A] sm:px-10 px-6 sm:py-20 py-10 rounded-lg bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: "url('vertical-bg.svg')" }}
-          >
-            <div className="h-full flex  flex-col justify-between">
-              <div>
-                <Image
-                  src={`${members.fahim.image}`}
-                  width={100}
-                  height={100}
-                  alt="Team member"
-                  className="mx-auto rounded-full border-2 border-[#2B2B5A]"
-                />
-              </div>
-
-              <div>
-                <h1 className="text-2xl font-medium leading-[32px] text-center mt-10">
-                  {members.fahim.name}
-                </h1>
-                <p className="text-[#CACAD0] leading-[22px] text-center mt-4">
-                  {members.fahim.designation}
-                </p>
-              </div>
-            </div>
-          </div>
+          <TeamMemberVertical memberInfo={members.fahim} />
         </div>
       </div>
     </div>

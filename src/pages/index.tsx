@@ -24,7 +24,9 @@ export default function Home() {
   };
 
   return (
-    <main className={`text-white min-h-screen   ${ds_sans.className}`}>
+    <main
+      className={`text-white min-h-screen overflow-hidden  ${ds_sans.className}`}
+    >
       <NextSeo
         title={meta.title}
         description={meta.description}

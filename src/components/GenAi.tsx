@@ -25,7 +25,7 @@ const GenAi = () => {
           transition={{ duration: 0.8, delay: 0.6 }}
         >
           <div
-            className="absolute w-full md:h-[700px] h-[450px] top-0 left-0 right-0 mx-auto bg-cover bg-center bg-no-repeat z-10 ellipse-shadow-inner"
+            className="absolute w-full md:h-[700px] sm:h-[450px] h-[350px] top-0 left-0 right-0 mx-auto bg-cover bg-center bg-no-repeat z-10 ellipse-shadow-inner"
             style={{
               backgroundImage: "url('earth-shade.png')",
             }}
@@ -33,13 +33,13 @@ const GenAi = () => {
         </motion.div>
 
         <div
-          className="absolute top-[200px] w-full lg:min-h-[500px] min-h-[350px] bg-cover bg-center bg-no-repeat z-10"
+          className="absolute md:top-[200px] sm:top-[130px] top-[100px] w-full lg:min-h-[500px] md:h-[350px] sm:h-[250px] h-[200px] bg-cover bg-center bg-no-repeat z-10"
           style={{
             backgroundImage: "url('earth-solid.png')",
           }}
         ></div>
 
-        <div className="absolute top-[300px] w-full z-20 px-4">
+        <div className="absolute md:top-[310px] sm:top-[230px] top-[180px] w-full z-20 px-4 lg:bg-transparent bg-[#0a0a16]">
           <motion.h1
             className="mb-8 max-w-[800px] mx-auto md:text-[64px] sm:text-[50px] xs:text-[40px] text-[35px] font-medium sm:leading-[72px] xs:leading-[55px] leading-[45px] text-center"
             initial="hidden"

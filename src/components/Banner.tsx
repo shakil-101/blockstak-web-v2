@@ -65,7 +65,7 @@ const Banner = () => {
       // style={{ backgroundImage: "url('banner.svg')" }}
     >
       <div
-        className="absolute top-0 left-0 w-full h-full z-[-1] bg-cover bg-center bg-no-repeat transition-transform duration-500 ease-out"
+        className=" absolute top-0 left-0 w-full h-full z-[-1] bg-cover bg-center bg-no-repeat transition-transform duration-500 ease-out"
         style={{
           transform: `scale(${scale})`,
           backgroundImage: "url('banner.svg')",
@@ -83,7 +83,10 @@ const Banner = () => {
           <br />
           Empowered to disrupt.
         </h1>
-        <p className="max-w-[900px] mx-auto text-[#CACAD0]  text-center md:text-[28px] text-[20px] sm:leading-[36px] leading-[30px]">
+        <p
+          data-value="7"
+          className="object max-w-[900px] mx-auto text-[#CACAD0]  text-center md:text-[28px] text-[20px] sm:leading-[36px] leading-[30px]"
+        >
           Empowered by cutting-edge technology and bold ideas, we're not just
           preparing for the future—we're designing it.
         </p>

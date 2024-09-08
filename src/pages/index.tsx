@@ -9,6 +9,7 @@ import Testimonial from "@/components/Testimonial";
 import Footer from "@/components/Footer";
 import { NextSeo } from "next-seo";
 import ParallaxComponent from "@/components/ParallaxComponent";
+import ContactForm from "@/components/ContactForm";
 
 const inter = Inter({ subsets: ["latin"] });
 const ds_sans = DM_Sans({ subsets: ["latin"] });
@@ -53,6 +54,7 @@ export default function Home() {
       <Team />
       <Testimonial />
       <Footer />
+      {/* <ContactForm /> */}
     </main>
   );
 }

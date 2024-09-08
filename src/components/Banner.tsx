@@ -92,7 +92,7 @@ const Banner = () => {
         </p>
 
         <div data-value="3" className="object w-[155px] mx-auto mt-16">
-          <PrimaryButton btnText={"Get In Touch"} />
+          <PrimaryButton btnText={"Get In Touch"} scrollToId={"contact"} />
         </div>
       </div>
     </div>

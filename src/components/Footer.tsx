@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 import PrimaryButton from "./PrimaryButton";
+import ContactForm from "./ContactForm";
 
 const Footer = () => {
   type formDataType = {
@@ -85,7 +86,8 @@ const Footer = () => {
 
         {/* ====== contact form ===== */}
         <div>
-          <form
+          <ContactForm />
+          {/* <form
             onSubmit={submitForm}
             className="grid lg:grid-cols-2 grid-cols-1 gap-8"
           >
@@ -134,7 +136,7 @@ const Footer = () => {
                 <PrimaryButton btnText={"Send"} />
               </div>
             </div>
-          </form>
+          </form> */}
         </div>
 
         {/* ===== quick links & address  */}

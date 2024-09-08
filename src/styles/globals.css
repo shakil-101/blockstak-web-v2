@@ -7,7 +7,12 @@
   --border-gradient-start: #524b92;
   --border-gradient-end: #8b7ff8;
 }
-
+* {
+  scroll-behavior: smooth !important;
+}
+html {
+  scroll-behavior: smooth !important;
+}
 body {
   background-color: var(--base-bg);
 }
@@ -125,5 +130,8 @@ body {
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+  html {
+    @apply scroll-smooth;
   }
 }

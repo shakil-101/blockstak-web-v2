@@ -11,6 +11,23 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   };
 
+  const handleClick = () => {
+    toggleMenu();
+
+    const element = document.getElementById("contact");
+    if (element) {
+      const offset = 100;
+      const elementPosition =
+        element.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <div className="fixed sm:top-10 w-full z-50 sm:px-10">
       <nav className="mx-auto max-w-[1400px] bg-gradient-to-r from-[#1f1f36]/80 to-[#101023]/80 backdrop-blur-md shadow-lg sm:rounded-full">
@@ -41,9 +58,9 @@ const Navbar = () => {
               >
                 Gen AI
               </Link>
-              <Link href={`/`}>
+              <div onClick={handleClick}>
                 <BubbleButton />
-              </Link>
+              </div>
             </div>
             <div className="sm:hidden">
               {/* <button
@@ -80,9 +97,9 @@ const Navbar = () => {
               >
                 Gen AI
               </Link>
-              <Link href={`/`} onClick={toggleMenu}>
+              <div onClick={handleClick}>
                 <BubbleButton />
-              </Link>
+              </div>
             </div>
           </div>
         )}

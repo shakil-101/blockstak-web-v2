@@ -70,7 +70,7 @@ const GenAi = () => {
             variants={variants}
             transition={{ duration: 1, delay: 1.3 }}
           >
-            <PrimaryButton btnText={"Get In Touch"} />
+            <PrimaryButton btnText={"Explore GenAI !!"} />
           </motion.div>
         </div>
       </div>

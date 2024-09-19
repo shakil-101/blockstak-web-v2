@@ -158,7 +158,7 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link href={`/`} className="hover:text-[#796BF8]">
+                  <Link href={`/gen-ai`} className="hover:text-[#796BF8]">
                     GenAI
                   </Link>
                 </li>

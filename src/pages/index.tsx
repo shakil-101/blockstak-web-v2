@@ -10,6 +10,7 @@ import Footer from "@/components/Footer";
 import { NextSeo } from "next-seo";
 import ParallaxComponent from "@/components/ParallaxComponent";
 import ContactForm from "@/components/ContactForm";
+import SmoothScroll from "@/components/SmoothScroll";
 
 const inter = Inter({ subsets: ["latin"] });
 const ds_sans = DM_Sans({ subsets: ["latin"] });
@@ -47,13 +48,15 @@ export default function Home() {
         }}
       />
       {/* <ParallaxComponent /> */}
-      <Navbar />
-      <Banner />
-      <Services />
-      <GenAi />
-      <Team />
-      <Testimonial />
-      <Footer />
+      <SmoothScroll>
+        <Navbar />
+        <Banner />
+        <Services />
+        <GenAi />
+        <Team />
+        <Testimonial />
+        <Footer />
+      </SmoothScroll>
       {/* <ContactForm /> */}
     </main>
   );

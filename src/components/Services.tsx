@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Lottie from "lottie-react";
 
 import Service1 from "../../public/service1.json";
 import Service2 from "../../public/service2.json";

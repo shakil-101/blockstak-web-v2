@@ -21,7 +21,7 @@ const Team = () => {
     raghib: {
       image: "/raghib.jpg",
       name: "Raghib Noor",
-      designation: "ML Developer",
+      designation: "ML Engineer",
     },
     asif: {
       image: "/asif.jpg",
@@ -31,7 +31,7 @@ const Team = () => {
     nayeem: {
       image: "/nayeem.jpg",
       name: "Nayeem Islam",
-      designation: " Backend Developer",
+      designation: "Technology Consultant",
     },
     shakil: {
       image: "/shakil.jpg",

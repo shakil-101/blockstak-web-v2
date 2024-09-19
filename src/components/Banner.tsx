@@ -60,14 +60,14 @@ const Banner = () => {
   return (
     <div
       ref={containerRef}
-      className="relative banner  min-h-screen flex items-center justify-center overflow-hidden pt-20"
+      className="relative banner min-h-screen flex items-center justify-center overflow-hidden pt-20"
       // className="banner bg-cover bg-center bg-no-repeat min-h-screen flex items-center justify-center"
       // style={{ backgroundImage: "url('banner.svg')" }}
     >
       <div
         className=" absolute top-0 left-0 w-full h-full z-[-1] bg-cover bg-center bg-no-repeat transition-transform duration-500 ease-out"
         style={{
-          transform: `scale(${scale})`,
+          // transform: `scale(${scale})`,
           backgroundImage: "url('banner.svg')",
         }}
       ></div>

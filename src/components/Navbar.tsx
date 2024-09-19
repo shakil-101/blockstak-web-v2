@@ -53,7 +53,7 @@ const Navbar = () => {
                 Home
               </Link>
               <Link
-                href={`/`}
+                href={`/gen-ai`}
                 className="text-[#CACAD0] hover:text-[#796BF8] text-lg font-medium"
               >
                 Gen AI

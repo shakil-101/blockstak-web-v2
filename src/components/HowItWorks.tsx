@@ -4,7 +4,6 @@ import React, { useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-// Register ScrollTrigger with GSAP
 gsap.registerPlugin(ScrollTrigger);
 
 const HowItWorks = () => {
@@ -28,16 +27,26 @@ const HowItWorks = () => {
   ]);
 
   useEffect(() => {
-    // Apply GSAP animation on component mount
-    gsap.to(".process-item", {
-      y: 100,
+    gsap.to(".scroll-process1", {
+      y: -100,
       duration: 1,
       stagger: 0.3,
       scrollTrigger: {
-        trigger: ".process-item",
-        start: "top center", // When the top of the element is at 80% of the viewport
-        // end: "bottom 20%", // When the bottom of the element is at 20% of the viewport
-        scrub: true, // Smoothly transition with the scroll
+        trigger: ".scroll-process1",
+        start: "top bottom",
+
+        scrub: true,
+      },
+    });
+
+    gsap.to(".scroll-process2", {
+      y: -80,
+      duration: 1,
+      stagger: 0.3,
+      scrollTrigger: {
+        trigger: ".scroll-process2",
+        start: "top bottom",
+        scrub: true,
       },
     });
   }, []);
@@ -46,25 +55,25 @@ const HowItWorks = () => {
     <div className="pt-20">
       <div className="container">
         <h2 className="sm:text-2xl text-xl text-center sm:leading-[32px] leading-[28px]"></h2>
-        <h1 className="process-item text-[#FAFAFF] md:text-[64px] sm:text-[50px] xs:text-[40px] text-[35px] font-medium sm:leading-[72px] xs:leading-[55px] leading-[45px]">
+        <h1 className="scroll-process1 text-[#FAFAFF] md:text-[64px] sm:text-[50px] xs:text-[40px] text-[35px] font-medium sm:leading-[72px] xs:leading-[55px] leading-[45px]">
           How Does it Work?
         </h1>
         <div className="mt-28">
           {processList.map((item, index) => (
             <div
               key={index}
-              className="grid grid-cols-12 lg:gap-x-20 md:gap-x-10 gap-y-10 mb-20 "
+              className="scroll-process2 grid grid-cols-12 lg:gap-x-20 md:gap-x-10 gap-y-10 mb-20 "
             >
               <div className="lg:col-span-3 md:col-span-2 col-span-12">
-                <p className="text-2xl leading-[31px]">0{index + 1}</p>
+                <p className="  text-2xl leading-[31px]">0{index + 1}</p>
               </div>
               <div className="md:col-span-4 col-span-12">
-                <h2 className="text-2xl font-semibold leading-[31px]">
+                <h2 className="  text-2xl font-semibold leading-[31px]">
                   {item.title}
                 </h2>
               </div>
               <div className="lg:col-span-5 md:col-span-6 col-span-12">
-                <p className="text-xl leading-[26px]">
+                <p className="  text-xl leading-[26px]">
                   {item.shortDescription}
                 </p>
               </div>

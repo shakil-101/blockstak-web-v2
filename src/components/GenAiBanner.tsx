@@ -1,7 +1,47 @@
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
+
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const GenAiBanner = () => {
+  useEffect(() => {
+    gsap.to(".scroll-banner1", {
+      y: -150,
+      duration: 1,
+      stagger: 0.3,
+      scrollTrigger: {
+        trigger: ".scroll-banner1",
+        start: "top center",
+        scrub: true,
+      },
+    });
+
+    gsap.to(".scroll-banner2", {
+      y: -120,
+      duration: 1,
+      stagger: 0.3,
+      scrollTrigger: {
+        trigger: ".scroll-banner2",
+        start: "top center",
+        scrub: true,
+      },
+    });
+
+    gsap.to(".scroll-banner3", {
+      y: -100,
+      duration: 2,
+      stagger: 0.3,
+      scrollTrigger: {
+        trigger: ".scroll-banner3",
+        start: "top bottom",
+        scrub: true,
+      },
+    });
+  }, []);
+
   return (
     <div
       className="bg-cover bg-center bg-no-repeat relative xl:pb-60 pb-20"
@@ -34,7 +74,7 @@ const GenAiBanner = () => {
 
         <div className="grid grid-cols-12 sm:gap-x-8 gap-y-8 lg:pt-20">
           <div className="lg:col-span-3 sm:col-span-6 col-span-12 order-1">
-            <div className="sm:h-[315px] h-[200px] relative">
+            <div className="scroll-banner1 sm:h-[315px] h-[200px] relative">
               <Image
                 className="w-full h-full object-cover rounded-lg"
                 src="/genai1.png"
@@ -55,7 +95,7 @@ const GenAiBanner = () => {
                   priority
                 />
               </div>
-              <div className="lg:mt-48 mt-20">
+              <div className="scroll-banner2 lg:mt-48 mt-20">
                 <p className="text-xl leading-[26px]">
                   Historically, AI was used to understand and recommend
                   information. Now, generative AI can also help us create new
@@ -72,7 +112,7 @@ const GenAiBanner = () => {
             </div>
           </div>
           <div className="lg:col-span-3 sm:col-span-6 col-span-12 lg:order-3 order-2">
-            <div className="sm:h-[315px] h-[200px] relative">
+            <div className="scroll-banner3 sm:h-[315px] h-[200px] relative">
               <Image
                 className="w-full h-full object-cover rounded-lg"
                 src="/genai3.png"

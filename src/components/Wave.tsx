@@ -5,7 +5,7 @@ const Wave = () => {
   return (
     <div className="">
       <div
-        className="max-w-[1900px] w-full xl:h-[400px] md:h-[300px] h-[250px] mx-auto bg-cover bg-center bg-no-repeat "
+        className="max-w-[1900px] w-full 2xl:h-[450px] xl:h-[400px] md:h-[300px] h-[250px] mx-auto bg-cover bg-center bg-no-repeat "
         style={{
           backgroundImage: "url('wave2.png')",
         }}
